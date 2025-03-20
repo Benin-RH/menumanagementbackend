@@ -1,11 +1,11 @@
 const MenuSchema=require('./MenuSchema')
 
 // Create a new menu item
-const addMenuItems = async (req, res) => {
+const addMenuItems = async (req, res) => {  
     try {
-      const { menuType, menuItem, description, price } = req.body;
+      const { menu:menuType, menuItem, description, price } = req.body;
   
-      if (!["Food", "Drinks"].includes(menuType)) {
+      if (!["Foods", "Drinks"].includes(menuType)) {
         return res.status(400).json({ error: "Invalid menu type. Must be 'Food' or 'Drinks'." });
       }
   
@@ -29,9 +29,10 @@ const addMenuItems = async (req, res) => {
   
 //   app.get("/menu/:type",
     const getMenuByType= async (req, res) => {
+      console.log(req.params.type);
     try {
       const menuType = req.params.type;
-      if (!["Food", "Drinks"].includes(menuType)) {
+      if (!["Foods", "Drinks"].includes(menuType)) {
         return res.status(400).json({ error: "Invalid menu type." });
       }
   

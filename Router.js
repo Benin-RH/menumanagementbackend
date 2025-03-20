@@ -9,6 +9,6 @@ router.post("/addMenuItem", addMenuItems);
 router.get("/getAllItem", getAllMenuItems);
 
 // Route to get menu items by type (Food or Drinks)
-router.get("/:type", getMenuByType);
+router.get("/menu/:type", getMenuByType);
 
 module.exports = router;

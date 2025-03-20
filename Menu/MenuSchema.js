@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const menuItemSchema = new mongoose.Schema({
   menuType: {
     type: String,
-    enum: ["Food", "Drinks"],
+    enum: ["Foods", "Drinks"],
     required: true,
   },
   menuItem: {
